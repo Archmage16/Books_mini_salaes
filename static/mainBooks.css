@@ -1,0 +1,34 @@
+.books-list{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.book{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.5s ease;
+
+}
+.book:hover{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+
+}
+h1{
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    
+}
+.footer{
+    text-align: center;
+}
