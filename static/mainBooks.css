@@ -6,7 +6,9 @@
     gap: 20px;
     margin: 20px;
 }
-
+.main{
+    text-align: center;
+}
 .book{
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -23,7 +25,6 @@
 
 }
 h1{
-    text-align: center;
     margin-top: 20px;
     font-family: 'Arial', sans-serif;
     color: #333;
