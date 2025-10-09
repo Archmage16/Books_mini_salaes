@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Star Wars Characters</title>
+</head>
+<body>
+    <h1>Star Wars Characters</h1>
+    <ul>
+        {% for c in characters %}
+            <li>
+                <a href="{% url 'character_detail' forloop.counter %}">
+                    {{ c.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
