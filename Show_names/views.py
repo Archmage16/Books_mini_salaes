@@ -1,9 +1,9 @@
 from django.shortcuts import render
-
+from .forms import CharacterForm
 import requests
+from django.http import HttpResponse
 # Create your views here.
 
-BASE_URL = ""
 
 def index(request):
     response = requests.get('https://www.swapi.tech/api/people')
@@ -19,3 +19,16 @@ def character_detail(request, char_id):
     character = data.get("result", {}).get("properties", {})
 
     return render(request, 'character_detail.html', {'character': character})
+
+
+def add_character(request):
+    if request.method == 'POST':
+        form = CharacterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Character added successfully!")
+        else:
+            return render(request, 'character_f.html', {'form': form})
+    else:
+        form = CharacterForm()
+    return render(request, 'character_f.html', {'form': form})
