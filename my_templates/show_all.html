@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{ Title }}
+    {% for b in books %}
+        <div style="border: 1px solid #ccc; padding: 10px; margin: 10px;">
+            <h3>{{ b.name }}</h3>
+            <p><strong>Автор:</strong> {{ b.author }}</p>
+            <p><strong>Год:</strong> {{ b.year }}</p>
+            <p><strong>Описание:</strong> {{ b.info }}</p>
+            {% if b.image_base64 %}
+                <img src="data:image/png;base64,{{ b.image_base64 }}" alt="Обложка" width="150">
+            {% else %}
+                <p>Нет обложки</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+
+</body>
+</html>
