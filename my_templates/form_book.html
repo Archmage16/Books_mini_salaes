@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Книга </title>
+    <title>Книга</title>
 </head>
 <body>
-    {{ Title }}
+    <h2>{{ Title }}</h2>
+
     <form method="post" action="." enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Сохранить"/>
+
+        <label for="cover_blob">Обложка (в БД):</label>
+        <input type="file" name="cover_blob" accept="image/*" placeholder="cover_blob">
+
+        <br><br>
+        <input type="submit" value="Сохранить">
     </form>
+
     {% if form.errors %}
         <hr> {{ form.errors }}
     {% endif %}

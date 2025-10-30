@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    {% if image_data %}
+        <img src="data:image/{{ image_type }};base64,{{ image_base64 }}" width="300" alt="book">
+    {% else %}
+        <p>Нет изображения</p>
+    {% endif %}
+</body>
+</html>

@@ -39,6 +39,8 @@ class Book( models.Model ):
     year  = models.DateField( verbose_name='Год издания' )
     cover = models.ImageField( upload_to='images', verbose_name='Обложка',
                                blank=True, null=True )
+    cover_blob = models.BinaryField( verbose_name='Обложка в БД',
+                                   blank=True, null=True )
     file = models.FileField( upload_to='pdf', verbose_name='Файл книги',
                              blank=True, null=True )
     info = models.TextField( verbose_name='Описание книги',
