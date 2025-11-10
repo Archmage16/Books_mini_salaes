@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск книг</title>
+</head>
+<body>
+
+<h2>Поиск книг</h2>
+
+<form method="get">
+    {{ form }}
+    <button type="submit">Найти</button>
+</form>
+
+<hr>
+
+{% if results %}
+    <h3>Результаты поиска:</h3>
+    <ul>
+        {% for r in results %}
+            <li>{{ r.title }} — {{ r.author }}</li>
+        {% endfor %}
+    </ul>
+{% elif form.is_bound %}
+    <p>Ничего не найдено.</p>
+{% endif %}
+
+</body>
+</html>
