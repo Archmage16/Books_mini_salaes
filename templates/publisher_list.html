@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Издательства</h2>
+
+    <a href="/publishers/add/">Добавить издательство</a>
+
+    <ul>
+        {% for p in publishers %}
+            <li>{{ p.name }}</li>
+        {% empty %}
+            <li>Пока нет издательств</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Назад на главную</a>
+
+</body>
+</html>

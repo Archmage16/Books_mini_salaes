@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Продажи</h2>
+    <a href="/sales/add/">Добавить продажу</a>
+
+    <ul>
+    {% for s in sales %}
+        <li>{{ s.publication.book.title }} — {{ s.year }}: {{ s.qty_sold }} шт., выручка {{ s.total_sales }}</li>
+    {% endfor %}
+    </ul>
+
+</body>
+</html>
