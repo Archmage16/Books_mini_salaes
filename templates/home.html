@@ -5,9 +5,11 @@
     <title>Домашняя</title>
 </head>
 <body>
+    <h1>HI {{username}}</h1>
 <h2>Добро пожаловать в библиотеку</h2>
 
-<a href="{% url 'search' %}">Перейти к поиску книг</a>
+<a href="{% url 'search' %}">Перейти к поиску книг</a><br>
+<a href="{% url 'book_list' %}">Получить все книги</a>
 
 </body>
 </html>

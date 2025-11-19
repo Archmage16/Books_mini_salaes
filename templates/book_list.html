@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Number of visits {{visits}}</p>
+    <h1>Book List</h1>
+    <div>
+        {% for book in books %}
+            <div>
+                <h2>{{ book.title }}</h2>
+                <p>Author: {{ book.author }}</p>
+                <p>Published: {{ book.published_date }}</p>
+            </div>
+        {% empty %}
+            <p>No books available.</p>
+        {% endfor %}
+    </div>
+
+    <h3>Your last visit {{last_visit}}</h3>
+</body>
+</html>
