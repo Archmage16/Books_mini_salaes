@@ -6,8 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Number of visits {{visits}}</p>
     <h1>Book List</h1>
+    {% if messages %}
+        <div>
+        {% for i in messages %}
+            <div class="alert">{{ i }}</div>
+        {% endfor %}
+        </div>
+    {% endif %}
+
+
+
+    <p>Number of visits {{visits}}</p>
+    
+
     <div>
         {% for book in books %}
             <div>
@@ -21,5 +33,7 @@
     </div>
 
     <h3>Your last visit {{last_visit}}</h3>
+
+    <p>{{signed_visits}}</p>
 </body>
 </html>
