@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Book
-from .forms import SearchForm
+from .forms import SearchForm, DynamicBookForm
 from datetime import datetime
 from django.contrib import messages
 from django.core import signing
@@ -42,3 +42,17 @@ def search_books(request):
         results = Book.objects.filter(title__icontains=query)
 
     return render(request, 'search.html', {'form': form, 'results': results})
+
+def add_book(request):
+    
+    form = DynamicBookForm(request.POST or None)
+
+    if request.method == 'POST' and form.is_valid():
+        Book.objects.create(
+            title=form.cleaned_data['title'],
+            author=form.cleaned_data['author'],
+            year=form.cleaned_data['year']
+        )
+        return redirect('book_list')
+
+    return render(request, 'add_book.html', {'form': form})
